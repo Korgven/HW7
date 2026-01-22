@@ -30,7 +30,7 @@ public class Main {
          int elixirOfEndurance = ravenBonesCount / 2 + dumplingsCount / 4;
          int elixirOfSecrecy = ghoulTearsCount / 7 + dumplingsCount + toadEyesCount / 2;
          int forbiddenElixir = ghoulTearsCount / 5 + dumplingsCount / 10 + toadEyesCount / 4 +
-                                + ravenBonesCount / 3;
+                                ravenBonesCount / 3;
 
         //todo дописать логику программы сюда
         if (toadEyesCount / 3 > 0 && ravenBonesCount > 0) {
