@@ -6,10 +6,8 @@ public class Main {
         int ghoulTearsCount;        //Слезы вурдалака
         int ravenBonesCount;        //Кости ворона
         int dumplingsCount;         //Пельмени(а почему, собственно нет? xD)
-//        int toadEyesCount = 10;          //Жабьи глаза
-//        int ghoulTearsCount = 10;        //Слезы вурдалака
-//        int ravenBonesCount = 10;        //Кости ворона
-//        int dumplingsCount = 10;         //Пельмени(а почему, собственно нет? xD)
+        boolean isCanCook = false;
+
         //todo реализовать ввод пользователем кол-ва ингредиентов.
         System.out.print("How many toad's eyes do you have?: ");
         toadEyesCount = new Scanner(System.in).nextInt();
@@ -35,20 +33,24 @@ public class Main {
         //todo дописать логику программы сюда
         if (toadEyesCount / 3 > 0 && ravenBonesCount > 0) {
             System.out.println("You can make " + toadEyesCount / 3 + " elixirs of Vigilance");
+            isCanCook = true;
         }
         if (ravenBonesCount / 2 > 0 && dumplingsCount / 4 > 0) {
             System.out.println("You can make " + dumplingsCount / 4 + " elixirs of Endurance");
+            isCanCook = true;
         }
         if (ghoulTearsCount / 7 > 0 && dumplingsCount > 0 && toadEyesCount / 2 > 0) {
             System.out.println("You can make " + ghoulTearsCount / 7 + " elixirs of Secrecy");
+            isCanCook = true;
         }
         if (ghoulTearsCount / 5 > 0 &&
                 dumplingsCount / 10 > 0 &&
                 toadEyesCount / 4 > 0 &&
                 ravenBonesCount / 3 > 0) {
             System.out.println("You can make " + dumplingsCount / 10 + " forbidden elixirs");
+            isCanCook = true;
         }
-        if (toadEyesCount < 2 || ghoulTearsCount < 5 || ravenBonesCount < 1 || dumplingsCount < 1) {
+        if (!isCanCook) {
             System.out.println("You can't make elixirs! You don't have ingredients enough!");
         }
     }
